@@ -100,33 +100,39 @@ export const services = [
   {
     icon: service1,
     title: "Médecine des dents",
-    desciption: "Soins complete pour une santé dentaire optimale",
+    description: "Soins complete pour une santé dentaire optimale",
+    path : "/médecineDesDents"
   },
   {
     icon: service3,
     title: "Implants dentaires",
-    desciption: "Restauration durable et narurelle de votre sourire",
+    description: "Restauration durable et narurelle de votre sourire",
+    path : "/ImplantsDentaires"
   },
   {
     icon: service5,
     title: "Rémunération et installation",
-    desciption: "Confortables solutions pour un sourire harmonieux",
+    description: "Confortables solutions pour un sourire harmonieux",
+    path : "/RémunérationEtInstallation"
   },
   {
     icon: service4,
     title: "Orthodontique",
-    desciption: "Correction précise et esthétique des irrégularités dentaires.",
+    description: "Correction précise et esthétique des irrégularités dentaires.",
+    path : "/Orthodontique"
   },
   {
     icon: service2,
     title: "Sourire hollywoodien",
-    desciption: "transformer votre sourire en éclatante perfection",
+    description: "transformer votre sourire en éclatante perfection",
+    path : "/SourireHollywoodien"
   },
   {
     icon: service6,
     title: "Consultation dentaire",
-    desciption:
+    description:
       "Evaluation approfondie pour des conseils personnalisés et précis",
+    path : "/ConsultationDentaire"
   },
 ];
 
@@ -175,9 +181,9 @@ export const BaseFooterLinks = [
 ];
 
 export const SecondaryPages = [
-  "conditions d'utilisation",
-  "politique de confidentialité",
-  "plan du site",
+  {label : "conditions d'utilisation", ref : "/terms"},
+  {label : "politique de confidentialité", ref : "/privacy"},
+  {label : "plan du site", ref : "/map"},
 ];
 
 export const socialMedia = [

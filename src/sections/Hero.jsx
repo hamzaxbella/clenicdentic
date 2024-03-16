@@ -6,7 +6,7 @@ import { dr1 } from "../assets/images";
 
 export const Hero = () => {
   return (
-    <section className="padding-x w-full lg:pt-12 bg-white-smoke text-sm mt-[100px] hero-height">
+    <section className="padding-x w-full lg:pt-12 bg-white-smoke text-sm  hero-height">
       <section className="max-container flex flex-col justify-evenly md:justify-center md:gap-12 lg:justify-between lg:gap-0 h-full">
         {/* CONTACT INFO */}
         <div className="flex flex-col gap-4 lg:flex-row lg:gap-12 ">
@@ -81,7 +81,7 @@ export const Hero = () => {
           {/* Dortor Image */}
           <div className="hidden lg:block flex-1   relative">
             <div className="bg-primary w-[500px] h-[400px] absolute bottom-0 rounded-custom right-0">
-            <img  src={dr1}  className="absolute bottom-0 right-0 max-w-[450px]" alt="" />
+            <img  src={dr1} rel="preload" fetchPriority="high" as="image" type="image/png" className="absolute bottom-0 right-0 max-w-[450px]" alt="" />
             <div className="absolute -top-4 -translate-y-full py-3 px-12 bg-white ring-1 ring-primary ring-opacity-30 rounded-xl font-bold text-primary">Karim yahya</div>
             </div>
           </div>

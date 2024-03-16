@@ -11,7 +11,7 @@ import { OurTeam } from "../sections/OurTeam";
 
 export const Apropos = () => {
   return (
-    <section className="mt-[100px] ">
+    <section className="">
 
         <section>
           <PageBanner

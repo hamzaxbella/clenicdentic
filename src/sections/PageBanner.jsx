@@ -16,7 +16,7 @@ export const PageBanner = ({ imgURL, Label }) => {
       </div>
 
       <div className="relative lg:rounded-3xl h-[30vh] lg:h-[70vh] mx-auto overflow-hidden text-center ">
-        <img src={imgURL} alt="" className="w-full h-full object-cover " />
+        <img src={imgURL} loading="lazy" alt="" className="w-full h-full object-cover " />
         <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl lg:text-4xl text-white font-bold z-[6]">
           {Label}
         </h1>

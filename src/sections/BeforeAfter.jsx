@@ -12,7 +12,7 @@ export const BeforeAfter = ({ beforeAfterImages }) => {
         <div className="flex flex-wrap justify-evenly padding">
           {beforeAfterImages.map((image) => (
             <div className=" w-[20rem] lg:w-[30rem] rounded-2xl overflow-hidden h-[500px] mb-10 gap-10">
-              <img src={image} className="w-full h-full object-cover" />
+              <img loading="lazy" src={image} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>

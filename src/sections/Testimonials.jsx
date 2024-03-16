@@ -44,6 +44,7 @@ export const Testimonials = () => {
                       src={tes.imgURL}
                       className="w-full h-full object-cover "
                       alt={tes.name}
+                      loading="lazy"
                     />
                   </div>
                   <div className="text-white flex flex-col gap-3">

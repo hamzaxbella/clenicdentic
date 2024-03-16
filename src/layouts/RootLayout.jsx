@@ -5,9 +5,7 @@ export const RootLayout = () => {
   return (
     <div className="root-layout">
       <ScrollRestoration />
-      <header className="w-full bg-white-smoke absolute left-0 top-0">
-        <Navbar />
-      </header>
+      <Navbar />
       <main>
         <Outlet />
       </main>

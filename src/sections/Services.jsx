@@ -26,8 +26,8 @@ export const Services = () => {
               <h4 className="font-semibold text-dark-text text-xl pt-8">
                 {service.title}
               </h4>
-              <p className="text-gray-text ">{service.desciption}</p>
-              <Link className="text-primary hover:underline">
+              <p className="text-gray-text ">{service.description}</p>
+              <Link to={service.path} className="text-primary hover:underline">
                 voir plus {">"}
               </Link>
             </div>

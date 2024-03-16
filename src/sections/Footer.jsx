@@ -5,7 +5,7 @@ import { banner } from '../assets/icons'
 
 export const Footer = () => {
   return (
-    <section className='bg-green-dark lg:h-screen  flex flex-col justify-around overflow-hidden'>
+    <section className='bg-green-dark lg:h-[90vh]  flex flex-col justify-around overflow-hidden'>
       <section className="padding padding-x lg:px-0 justify-between flex flex-wrap max-container gap-24">
         <div className=''>
         <h1 className=" w-fit relative text-3xl  before:h-2 before:w-full before:absolute before:-bottom-0 before:bg-gradient-to-r before:from-green-secondary before:to-shiny-green text-white-smoke lg:text-3xl lg:before:-bottom-2">
@@ -24,13 +24,13 @@ export const Footer = () => {
         </h1>
           <ul className='flex flex-col py-8 gap-2'>
             {SecondaryPages.map((link) => (
-              <Link to="/" className='hover:underline text-gray-300' key={link}>{link}</Link>
+              <Link to={link.ref} className='hover:underline text-gray-300' key={link.label}>{link.label}</Link>
             ))}
           </ul>
         </div>
         <div className='flex flex-col gap-4'>
           <div className='w-[350px] h-[170px]'>
-          <img src={banner} className='w-full h-full object-cover' alt="banner logo" />
+          <img src={banner} loading="lazy" className='w-full h-full object-cover' alt="banner logo" />
 
           </div>
           <div className="flex gap-4">

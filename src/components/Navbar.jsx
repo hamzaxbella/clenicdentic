@@ -1,34 +1,29 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { navLinks } from "../constants";
 import { logo } from "../assets/icons";
 import { PrimaryButton } from "./PrimaryButton";
 import { menu } from "../assets/icons";
 
 export const Navbar = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navOpen && !event.target.closest(".nav-container")) {
-        setNavOpen(false);
-      }
-    };
-
     const handleScroll = () => {
-      if (navOpen) {
-        setNavOpen(false);
-      }
+      const scrollPosition = window.scrollY;
+      const shouldBeSticky = scrollPosition >= window.innerHeight;
+      setIsHeaderSticky(shouldBeSticky);
     };
 
-    window.addEventListener("click", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("click", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [navOpen]);
+  }, [location.pathname]);
+
+  const [navOpen, setNavOpen] = useState(false);
 
   const handleOpenMenu = (event) => {
     event.stopPropagation();
@@ -36,39 +31,43 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="flex  justify-between items-center max-container h-[100px]  padding-x lg:px-0 z-20">
-      <img className="w-[50px] h-fit" src={logo} alt="dentist logo" />
-      <div className="flex gap-6 items-center">
-        <ul
-          className={`z-20 nav-container absolute lg:relative lg:bottom-0 lg:w-fit flex flex-col lg:flex-row  w-full gap-10 padding-x  left-0 lg:bg-transparent bg-primary ${
-            navOpen ? "top-[100px] shadow-xl" : "bottom-full"
-          }  lg:shadow-none py-10`}
-        >
-          {navLinks.map((link) => (
-            <li
-              className="text-lg text-white lg:text-gray-text font-bold lg:font-normal lg:text-md lg:hover:text-primary"
-              key={link.name}
-            >
-              {link.name === "Services" ? (
-                <DropdownMenu items={link.dropdownItems} />
-              ) : (
-                <Link to={link.path}>{link.name}</Link>
-              )}
-            </li>
-          ))}
-        </ul>
+    <header className={`w-full  z-40 transition-all  ${location.pathname == "/" ? ' bg-white-smoke ' : 'bg-white '} ${isHeaderSticky ? 'sticky top-0 shadow-md' : ''}`}>
+      <nav className={`flex justify-between items-center max-container h-[100px] padding-x lg:px-0 z-20`}>
+        <Link to="/" ><img className="w-[50px] h-fit" src={logo} alt="dentist logo" /></Link>
+        <div className="flex gap-6 items-center">
+          <ul
+            className={`z-20 nav-container absolute lg:relative lg:bottom-0 lg:w-fit flex flex-col lg:flex-row w-full gap-10 padding-x left-0 lg:bg-transparent bg-primary ${
+              navOpen ? "top-[100px] shadow-xl" : "bottom-full"
+            } lg:shadow-none py-10`}
+          >
+            {navLinks.map((link) => (
+              <li
+                className="text-lg text-white lg:text-gray-text font-bold lg:font-normal lg:text-md lg:hover:text-primary"
+                key={link.name}
+              >
+                {link.name === "Services" ? (
+                  <DropdownMenu items={link.dropdownItems} />
+                ) : (
+                  <NavLink to={link.path} className={location.pathname === link.path ? 'text-primary font-medium' : ''
+                }
+                  >{link.name}</NavLink>
+                )}
+              </li>
+            ))}
+          </ul>
 
-        <PrimaryButton />
-        <img
-          src={menu}
-          width={25}
-          height={25}
-          onClick={handleOpenMenu}
-          alt="nav menu icon"
-          className="lg:hidden"
-        />
-      </div>
-    </nav>
+          <PrimaryButton />
+          <img
+            src={menu}
+            width={25}
+            height={25}
+            onClick={handleOpenMenu}
+            alt="nav menu icon"
+            className="lg:hidden"
+          />
+        </div>
+      </nav>
+    </header>
   );
 };
 
@@ -119,7 +118,7 @@ const DropdownMenu = ({ items }) => {
       </button>
 
       {isOpen && (
-        <div className="w-full text-white bg-primary lg:absolute lg:top-8 lg:left-1/2 lg:-translate-x-1/2 lg:w-56 mt-2 origin-top-right lg:bg-white lg:rounded-md lg:shadow-lg ">
+        <div className="w-full text-white bg-primary lg:absolute  lg:top-14 lg:left-1/2 lg:-translate-x-1/2 lg:w-56 mt-2 origin-top-right lg:bg-white lg:rounded-md lg:shadow-lg ">
           <div
             className="py-1"
             role="menu"
@@ -142,5 +141,3 @@ const DropdownMenu = ({ items }) => {
     </div>
   );
 };
-
-export default DropdownMenu;

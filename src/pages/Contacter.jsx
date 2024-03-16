@@ -8,7 +8,7 @@ import { Map } from "../components/Map";
 
 export const Contacter = () => {
   return (
-    <section className="mt-[100px]">
+    <section className="">
       <section>
         <PageBanner
           imgURL={contactbanner}
