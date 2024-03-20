@@ -53,11 +53,11 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? (
+      {/* {isLoading ? (
         <LoadingScreen />
-      ) : (
+      ) : ( */}
         <RouterProvider router={router} />
-      )}
+      {/* )} */}
     </div>
   );
 }
