@@ -7,7 +7,7 @@ export const About = () => {
         </h1>
         <div className="lg:flex">
           <p className="text-dark-text py-12 leading-8 lg:flex-1 lg:text-xl lg:leading-10">
-            Chez ClenicDentic, notre mission dépasse la simple pratique
+            Chez Denticleanic, notre mission dépasse la simple pratique
             dentaire ; elle consiste à cultiver des relations durables fondées
             sur la confiance et l'excellence. Guidés par un engagement à élever
             les normes de santé bucco-dentaire, nous allions expertise et

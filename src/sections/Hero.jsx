@@ -25,12 +25,12 @@ export const Hero = () => {
           <div className="lg:flex-1 pb-10">
             {/* HERO INFO */}
             <div className="flex flex-col gap-6 ">
-              <p className="text-md text-primary md:text-lg ">DentiClinic.</p>
+              <p className="text-md text-primary md:text-lg ">DentiCleanic.</p>
               <h2 className="text-2xl font-medium text-dark-text leading-8 md:text-3xl md:w-3/4">
                 Votre Dentiste Expérimenté pour un Sourire Sain et Lumineux.
               </h2>
               <p className="text-md md:text-lg text-gray-text ">
-                DentiClinic: Expertise dentaire à Agadir. Avec 
+                DentiCleanic: Expertise dentaire à Agadir. Avec 
                 [Doctor Name], sourires éclatants et confort assurée. Votre santé
                 bucco-dentaire, notre priorité.
               </p>

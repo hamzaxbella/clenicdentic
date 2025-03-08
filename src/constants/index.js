@@ -76,12 +76,12 @@ export const navLinks = [
 
 export const contactSimple = [
   { icon: phone, label: "(+112) 6 35 39 00 *5" },
-  { icon: envolope, label: "info@marocdentaire.com" },
+  { icon: envolope, label: "info@denticleanic.com" },
 ];
 
 export const contactFull = [
   { icon: phone, label: "(+112) 6 35 39 00 *5" },
-  { icon: envolope, label: "info@marocdentaire.com" },
+  { icon: envolope, label: "info@denticleanic.com" },
   { icon: city , label : '124 Avenue Mohammed V, Marrakech, Morocco'}
 ];
 
@@ -156,7 +156,7 @@ export const testimonials = [
     name: "Mohammade Bannani",
     status: "Soin exemplaire",
     label:
-      "Expérience exceptionnelle chez Maroc Dentaire. Dr.[name] et équipe dévoués, proffessionnels. Service de qualité, recommande vivement.",
+      "Expérience exceptionnelle chez Denticleanic. Dr.[name] et équipe dévoués, proffessionnels. Service de qualité, recommande vivement.",
   },
   {
     imgURL: test2,

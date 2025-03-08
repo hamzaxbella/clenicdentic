@@ -42,15 +42,22 @@ export const Navbar = () => {
           >
             {navLinks.map((link) => (
               <li
-                className="text-lg text-white lg:text-gray-text font-bold lg:font-normal lg:text-md lg:hover:text-primary"
+                className="text-lg font-bold lg:font-normal lg:text-md lg:text-gray-text lg:hover:text-primary"
                 key={link.name}
               >
                 {link.name === "Services" ? (
-                  <DropdownMenu items={link.dropdownItems} />
+                  <DropdownMenu items={link.dropdownItems} isMobile={true} />
                 ) : (
-                  <NavLink to={link.path} className={location.pathname === link.path ? 'text-primary font-medium' : ''
-                }
-                  >{link.name}</NavLink>
+                  <NavLink 
+                    to={link.path} 
+                    className={({ isActive }) => 
+                      isActive 
+                        ? 'text-white font-bold lg:text-primary lg:font-medium bg-primary-dark bg-opacity-30 py-1 px-3 rounded-md lg:bg-transparent lg:p-0 lg:rounded-none'
+                        : 'text-white/90 hover:text-white lg:text-gray-text lg:hover:text-primary'
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
                 )}
               </li>
             ))}
@@ -71,7 +78,7 @@ export const Navbar = () => {
   );
 };
 
-const DropdownMenu = ({ items }) => {
+const DropdownMenu = ({ items, isMobile = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   let timeoutId;
 
@@ -98,12 +105,12 @@ const DropdownMenu = ({ items }) => {
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className="inline-flex items-center text-lg text-white font-bold lg:text-gray-text lg:font-normal lg:text-md lg:hover:text-primary"
+        className="inline-flex items-center text-lg font-bold lg:text-gray-text lg:font-normal lg:text-md lg:hover:text-primary text-white/90 hover:text-white"
         onClick={toggleDropDown}
       >
         Services
         <svg
-          className="w-5 h-5 ml-2 -mr-1"
+          className={`w-5 h-5 ml-2 -mr-1 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -111,14 +118,14 @@ const DropdownMenu = ({ items }) => {
         >
           <path
             fillRule="evenodd"
-            d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414zM10 14a1 "
+            d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
             clipRule="evenodd"
           />
         </svg>
       </button>
 
       {isOpen && (
-        <div className="w-full text-white bg-primary lg:absolute  lg:top-14 lg:left-1/2 lg:-translate-x-1/2 lg:w-56 mt-2 origin-top-right lg:bg-white lg:rounded-md lg:shadow-lg ">
+        <div className="w-full text-white bg-primary lg:absolute lg:top-14 lg:left-1/2 lg:-translate-x-1/2 lg:w-56 mt-2 origin-top-right lg:bg-white lg:rounded-md lg:shadow-lg">
           <div
             className="py-1"
             role="menu"
@@ -129,7 +136,7 @@ const DropdownMenu = ({ items }) => {
               <Link
                 to={item.path} // Use item.path instead of item.href
                 key={item.name}
-                className="block px-4 py-2 lg:text-sm text-lg font-medium text-white lg:text-gray-700 hover:bg-light-green-bg"
+                className="block px-4 py-3 lg:text-sm text-lg font-medium text-white/90 hover:text-white hover:bg-primary-dark/30 lg:text-gray-700 lg:hover:text-primary lg:hover:bg-light-green-bg"
                 role="menuitem"
               >
                 {item.name}
