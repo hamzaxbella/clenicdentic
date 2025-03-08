@@ -42,7 +42,7 @@ export const Footer = () => {
       </section>
       <div className='text-center py-4'>
         <h2 className=' lg:text-xl font-light text-white'>All content © 2024 Maroc Dentaire. All rights reserved. </h2>
-        <p className='text-gray-300  text-sm '>Web design by <Link to={'/'} className='text-primary hover:underline'>web makers solution</Link></p>
+        <p className='text-gray-300  text-sm '>Web design by <a href={'https://www.instagram.com/hamzaxbella/'} target='_blank' className='text-primary hover:underline'>zyllux digital </a></p>
       </div>
     </section>
   )

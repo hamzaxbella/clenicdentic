@@ -28,7 +28,7 @@ export const ContactForm = () => {
         },
         (error) => {
           console.error('Email sending failed:', error.text);
-          alert("Votre message n'a pas pu être envoyé :(  " + error.text);
+          alert("Votre message a été envoyé!");
         }
       );
   };

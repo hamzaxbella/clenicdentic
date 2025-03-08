@@ -142,28 +142,28 @@ export const testimonials = [
     name: "Raya abdelkarim",
     status: "Renouveau souriant",
     label:
-      "Grâce au Dr.Karim, mon sourire retrouve éclat. Son professionnalisme m'impressionne, Je le recommande vivement.",
+      "Grâce au Dr.[name], mon sourire retrouve éclat. Son professionnalisme m'impressionne, Je le recommande vivement.",
   },
   {
     imgURL: test4,
     name: "Ismail Ilmasrawi",
     status: "Expertise remarquable",
     label:
-      "Dr.Karim allie expertise et dévouement Approche holistique remarquable. Je recommande vivement pour des résultats.",
+      "Dr.[name] allie expertise et dévouement Approche holistique remarquable. Je recommande vivement pour des résultats.",
   },
   {
     imgURL: test3,
     name: "Mohammade Bannani",
     status: "Soin exemplaire",
     label:
-      "Expérience exceptionnelle chez Maroc Dentaire. Dr.Karim et équipe dévoués, proffessionnels. Service de qualité, recommande vivement.",
+      "Expérience exceptionnelle chez Maroc Dentaire. Dr.[name] et équipe dévoués, proffessionnels. Service de qualité, recommande vivement.",
   },
   {
     imgURL: test2,
     name: "Yahya Izakan",
     status: "patient satisfé",
     label:
-      "مشكورين بزاف على الخدمة. الدكتور كريم وفريقهم متفانين في خدمة المرضى. شكرا على الإهتمام والخدمة الممتازة",
+      "مشكورين بزاف على الخدمة. الدكتور وفريقهم متفانين في خدمة المرضى. شكرا على الإهتمام والخدمة الممتازة",
     rtl: true,
   },
 ];
@@ -194,9 +194,9 @@ export const socialMedia = [
 ];
 
 export const team = [
-  { name: "Dr. Karim yahya", imageURL: dr1 },
-  { name: "Dr. Pierre lefèvre", imageURL: dr2 },
-  { name: "Dr. annas abdessadek", imageURL: dr3 },
+  { name: "Dr. [Doctor 1]", imageURL: dr1 },
+  { name: "Dr. [Doctor 2]", imageURL: dr2 },
+  { name: "Dr. [Doctor 3]", imageURL: dr3 },
 ];
 
 export const collaborations = [dan1, dan2, dan3, dan4];

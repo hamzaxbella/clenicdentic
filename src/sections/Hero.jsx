@@ -25,13 +25,13 @@ export const Hero = () => {
           <div className="lg:flex-1 pb-10">
             {/* HERO INFO */}
             <div className="flex flex-col gap-6 ">
-              <p className="text-md text-primary md:text-lg ">maroc dentaire.</p>
+              <p className="text-md text-primary md:text-lg ">DentiClinic.</p>
               <h2 className="text-2xl font-medium text-dark-text leading-8 md:text-3xl md:w-3/4">
                 Votre Dentiste Expérimenté pour un Sourire Sain et Lumineux.
               </h2>
               <p className="text-md md:text-lg text-gray-text ">
-                Maroc Dentaire: Expertise dentaire à Marrakech. Avec le
-                Dr.Karim, sourires éclatants et confort assurée. Votre santé
+                DentiClinic: Expertise dentaire à Agadir. Avec 
+                [Doctor Name], sourires éclatants et confort assurée. Votre santé
                 bucco-dentaire, notre priorité.
               </p>
               <div className="flex gap-4 items-center">
@@ -82,7 +82,7 @@ export const Hero = () => {
           <div className="hidden lg:block flex-1   relative">
             <div className="bg-primary w-[500px] h-[400px] absolute bottom-0 rounded-custom right-0">
             <img  src={dr1} rel="preload" fetchPriority="high" as="image" type="image/png" className="absolute bottom-0 right-0 max-w-[450px]" alt="" />
-            <div className="absolute -top-4 -translate-y-full py-3 px-12 bg-white ring-1 ring-primary ring-opacity-30 rounded-xl font-bold text-primary">Karim yahya</div>
+            <div className="absolute -top-4 -translate-y-full py-3 px-12 bg-white ring-1 ring-primary ring-opacity-30 rounded-xl font-bold text-primary">[Doctor Name]</div>
             </div>
           </div>
         </div>
